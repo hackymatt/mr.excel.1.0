@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
 	<title>MR. EXCEL</title>
 </head>
 <body>
@@ -16,9 +17,10 @@
 			</div>
 			<ul class="links">
 				<li><a href="#home">Strona główna</a></li>
-				<li><a href="#about">O nas</a></li>
+				<li><a href="#about">O mnie</a></li>
 				<li><a href="#offer">Oferta</a></li>
-				<li><a href="#work">Projekty</a></li>
+				<li><a href="#courses">Kursy</a></li>
+				<!-- <li><a href="#addins">Dodatki</a></li> -->
 				<li><a href="#contact">Kontakt</a></li>
 			</ul>
 			<label for="nav-toggle" class="icon-burger">
@@ -29,24 +31,94 @@
 		</nav>
 		
 		<section id="home">
-			<h1>Welcome To My Site</h1>
-			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+			<div class="card">
+				<img src="logo.png" alt="">
+				<br>
+				<span>to</span>
+				<span class="auto-type"></span>
+			</div>
 		</section>
 		<section id="about">
-			<h1>About</h1>
-			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+			<div class="card">
+				<div class="image"><img src="image.JPG" alt=""></div>
+				
+				<p class="lead">Hello! <br> Co tam mordo? <br><br><br><br><br><br><br><br><br><br></p>
+			</div>
 		</section>
 		<section id="offer">
-			<h1>Service</h1>
-			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+			<div class="card">
+				<h1>Service</h1>
+				<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+			</div>
 		</section>
-		<section id="work">
-			<h1>Service</h1>
-			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+		<section id="courses">
+			<div class="card">
+				<div id="course1" class="inner-card">
+					<a href="https://www.udemy.com/course/excel-podstawowy/?referralCode=839AD8A6AFA31478A2D1" target="_blank">
+						<p id="title">Excel Podstawowy</p>
+						<img src="podstawowy.jpg" alt="">
+						<p class="description">Poznaj podstawy Excela w 10 lekcjach</p>
+						<div class="details">
+							<p class="rate"><span class="fa fa-star checked"></i></span>4.6</p>
+							<p class="users"><span class="fa fa-user"></span>61</p>
+						</div>
+						<p class="price"><span class="fa fa-tag"></span>84.99 zł</p>
+					</a>
+				</div>
+				<div id="course2" class="inner-card">
+					<a href="https://www.udemy.com/course/excel-sredniozaawansowany/?referralCode=AC386CE94A2752932CE8" target="_blank">
+						<p id="title">Excel Średniozaawansowany</p>
+						<img src="średniozaawansowany.jpg" alt="">
+						<p class="description">Poznaj średniozaawansowane funkcje Excela w 10 lekcjach</p>
+						<div class="details">
+							<p class="rate"><span class="fa fa-star checked"></i></span>4.7</p>
+							<p class="users"><span class="fa fa-user"></span>40</p>
+						</div>
+						<p class="price"><span class="fa fa-tag"></span>84.99 zł</p>
+					</a>
+				</div>
+				<div id="course3" class="inner-card">
+					<a href="https://www.udemy.com/course/excel-podstawowy-sredniozaawansowany/?referralCode=87027D448EE1004791B2" target="_blank">
+						<p id="title">Excel Podstawowy + Średniozaawansowany</p>
+						<img src="podstawowy+średniozaawansowany.jpg" alt="">
+						<p class="description">Poznaj Excela od zera i zostań średniozaawansowanym użytkownikiem!</p>
+						<div class="details">
+							<p class="rate"><span class="fa fa-star checked"></i></span>0.0</p>
+							<p class="users"><span class="fa fa-user"></span>3</p>
+						</div>
+						<p class="price"><span class="fa fa-tag"></span>129.99 zł</p>
+					</a>
+				</div>
+			</div>
 		</section>
+
+		<!-- <section id="addins">
+			<div class="card">
+			</div>
+		</section> -->
+
 		<section id="contact">
-			<h1>Contact</h1>
-			<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+			<div class="card">
+				<h1>Kontakt</h1>
+				<div class="email">
+					<a href="mailto:mr.excel.szkolenia@gmail.com">
+						<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" alt="">	
+						<p>Napisz do mnie</p>
+					</a>
+				</div>
+				<div class="facebook">
+					<a href="https://www.facebook.com/mr.excel.szkolenia" target="_blank">
+						<img src="https://brandlogos.net/wp-content/uploads/2021/04/facebook-icon.png" alt="">					
+						<p>Znajdź mnie na Facebook</p>
+					</a>
+				</div>
+				<div class="udemy">
+					<a href="https://www.udemy.com/user/mr-excel-2/"  target="_blank">
+						<img src="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png" alt="">
+						<p>Znajdź mnie na Udemy</p>
+					</a>
+				</div>
+			</div>
 		</section>
 
 		<ul class="navigation">
@@ -55,10 +127,14 @@
 			<li></li>
 			<li></li>
 			<li></li>
+			<!-- <li></li> -->
 		</ul>
 
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 	<script src="app.js"></script>
+	<!-- <script src="api.js"></script> -->
 </body>
 </html>
 
