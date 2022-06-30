@@ -1,5 +1,5 @@
-var scrollTop = 0;
-var index = 0;
+let scrollTop = 0;
+let index = 0;
 const windowHeight = window.innerHeight;
 const sections = document.querySelectorAll('section');
 const navigation = document.querySelector('.navigation');
@@ -8,7 +8,8 @@ function resetSelection() {
   for (var i = 0; i < navigation.children.length; i++) {
     navigation.children[i].classList.remove('selected');
   }
-}
+};
+
 window.addEventListener('scroll', function() {
   scrollTop = window.scrollY;
   sections.forEach(function(section, i) {
@@ -26,4 +27,17 @@ navigation.querySelectorAll('li').forEach(function(item, i) {
       behavior: 'smooth'
     });
   });
+});
+
+
+$('.links a').on('click', function(e) {
+    if (this.hash !=='') {
+        e.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800);
+    };
 });
