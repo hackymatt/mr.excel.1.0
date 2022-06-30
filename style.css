@@ -1,4 +1,11 @@
-/* @import url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css'); */
+*{
+	--nav-height: 6vh;
+	--nav-background: rgb(255, 255, 255);
+	--nav-font-color: rgb(2, 116, 56);
+	--card-background: rgb(99, 92, 106, 0.25);
+	--inner-card-background: rgba(44, 44, 44, 0.8);
+	--hover-color: rgb(99, 92, 106, 1);
+}
 
 body {
 	margin: 0;
@@ -6,7 +13,8 @@ body {
 	color: #fff;
 	height: 100vh;
 	line-height: 1.6;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 nav {
@@ -17,8 +25,8 @@ nav {
 	top: 0;
 	font-family: 'Montserrat', sans-serif;
 	padding: 0 5%;
-	height: 8vh;
-	background-color: rgb(255, 255, 255);
+	height: var(--nav-height);
+	background-color: var(--nav-background);
 }
 nav .logo {
 	float: left;
@@ -26,7 +34,7 @@ nav .logo {
 	align-items: center;
 	font-size: 24px;
 	width: auto;
-	height: 8vh;
+	height: var(--nav-height);
 }
 nav .logo img {
 	margin-top: 15px;
@@ -52,7 +60,7 @@ nav .links a {
 	padding: 1em;
 	font-size: 16px;
 	font-weight: bold;
-	color: rgb(2, 116, 56);
+	color: var(--nav-font-color);
 	text-decoration: none;
     display: inline-block;
     padding: 15px 20px;
@@ -61,13 +69,13 @@ nav .links a {
 nav .links a::after { 
     content: "";
     position: absolute;
-    bottom: 5px;
+    bottom: 1;
     left: 50%;
     display: block;
     background: none repeat scroll 0 0 transparent;
     height: 2px;
     width: 0;
-    background: rgb(2, 116, 56);
+    background: var(--nav-font-color);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
   
@@ -90,13 +98,14 @@ nav .icon-burger {
 nav .icon-burger .line {
 	width: 30px;
 	height: 5px;
-	background-color: rgb(2, 116, 56);
+	background-color: var(--nav-font-color);
 	margin: 5px;
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+
 	nav .logo {
 		float: none;
 		width: auto;
@@ -114,13 +123,12 @@ nav .icon-burger .line {
 		z-index: 9;
 		left: 0;
 		right: 0;
-		top: 8vh;
-		bottom: 100%;
+		top: var(--nav-height);
 		width: auto;
-		height: auto;
+		height: 0%;
 		flex-direction: column;
 		justify-content: space-evenly;
-		background-color: rgba(0,0,0,.8);
+		background-color: var(--nav-background);
 		overflow: hidden;
 		box-sizing: border-box;
 		transition: all .5s ease-in-out;
@@ -129,8 +137,9 @@ nav .icon-burger .line {
 		font-size: 20px;
 	}
 	nav :checked ~ .links {
-		bottom: 0;
+		height: 50%;
 	}
+
 	nav .icon-burger {
 		display: block;
 	}
@@ -143,20 +152,23 @@ nav .icon-burger .line {
 	nav :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}
-	
+
+	section#courses .inner-card {
+		padding-bottom: 10%;
+	}
+		
+	.navigation {
+		visibility: hidden;
+	}
+
 }
 
 .container {
 	width: 100%;
 	height: 100%;
 	/* CSS Smooth Scroll */
-	overflow-y: auto;
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
-}
-
-.lead {
-	font-size: 1.5rem;
 }
 
 section {
@@ -170,39 +182,246 @@ section {
 
 	/* Scroll Snap */
 	scroll-snap-align: center;
-
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
   
-section h1 {
-	font-size: 4rem;
+.description {
+	font-size: 17.5px;
+	white-space: wrap;
+	overflow: hidden;
+	text-align: center;
+	height: 17.5%;
 }
 
-/* Section Images */
-section#home {
-	background: url('https://source.unsplash.com/bZZp1PmHI0E/1600x900') no-repeat center center/cover;;
+/* card */
+.card {
+	background-color: var(--card-background);
+	border-radius: 25px;
+	padding: 15px;
+	width: 32.5vh;
 }
 
-section#about {
-	background: url('https://source.unsplash.com/VRxo0yY-gyM/1600x900') no-repeat center center/cover;;
+.inner-card {
+	background-color: var(--inner-card-background);
+	border-radius: 25px;
+	padding: 15px;
+	width: 25%;
+	height: 90%;
 }
 
-section#offer {
-	background: url('https://source.unsplash.com/K2tdx2mFDHc/1600x900') no-repeat center center/cover;;
+section#home .card {
+	height: auto;
+	width: 85%;
 }
 
-section#work {
-	background: url('https://source.unsplash.com/K2tdx2mFDHc/1600x900') no-repeat center center/cover;;
+section#home .card img {
+	width: 30vh;
+	filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
 }
 
-section#contact {
-	background: url('https://source.unsplash.com/2aAHlfDOhJM/1600x900') no-repeat center center/cover;;
+section#home .card span {
+	font-size: 35px;
+	
+}
+
+/* about */
+
+section#about .card .image {
+	display: inline-block; 
+	position: relative; 
+	width: 200px; 
+	height: 200px; 
+	overflow: hidden; 
+	border-radius: 50%;
+} 
+
+section#about .card {
+	width: 85%; 
+	height: 80%; 
+	margin-top: 4%;
+}
+
+section#about .card img {
+	width: 100%; 
+	height: auto; 
+}
+
+/* courses */
+
+section#courses .card {
+	margin-top: 3%;
+	width: 85%;
+	height: 80%;
+	display: flex;
+    float: none;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+}
+
+section#courses .card .details{
+	display: flex;
+    float: none;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	height: 10%;
+}
+
+#title {
+	width: 25px;
+	text-align: center;
+}
+
+section#courses .inner-card {
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 100%;
+	min-width: 250px;
+}
+
+section#courses .inner-card a {
+	text-decoration: none;
+	color: white;	
+}
+
+section#courses .inner-card .price {
+	font-size: 30px;
+	display: flex;
+    float: none;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	height: 5%;
+}
+
+section#courses .inner-card .rate {
+	font-size: 20px;
+	display: flex;
+    float: none;
+	flex-direction: colun;
+	align-items: center;
+	justify-content: right;
+	color: white;
+}
+
+section p#title {
+	font-weight: bold;
+	width: 100%;
+	height: 50px;
+}
+
+section#courses .inner-card .users {
+	font-size: 20px;
+	display: flex;
+    float: none;
+	flex-direction: colun;
+	align-items: center;
+	justify-content: right;
+	color: white;
+}
+
+.fa-user {
+	color: white;
+	margin-right: 5px;
+}
+
+.fa-tag {
+	color: white;
+	margin-right: 5px;
+}
+
+.fa-star {
+	color: white;
+	margin-right: 5px;
+}
+
+.fa-clock-o {
+	color: white;
+	margin-right: 5px;
+}
+
+.fa-book {
+	color: white;
+	margin-right: 5px;
+}
+
+section#courses .inner-card:hover {
+	background-color: var(--hover-color);
+	transform: scale(1.03);
+}
+
+.inner-card img {
+	width: 100%;
+	height: 40%;
+	max-height: 50%;
+	object-fit: cover;
+}
+
+/* contact */
+
+section#contact .card {
+	margin-top: -5%;
+	width: 40vh;
+}
+
+section#contact .card div div{
+	background-color: var(--inner-card-background);
+	border-radius: 15px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+section#contact .card div div:hover {
+	background-color: rgb(99, 92, 106, 1);
+	transform: scale(1.03);
+}
+
+section#contact a {
+	text-decoration: none;
+	color: white;	
+	font-size: 100%;
+	text-align: left;
+	display: flex;
+    float: none;
+	align-items: center;
+	justify-content: left;
+}
+
+section#contact .email img {
+	width: 45px;
+	height: 45px;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+section#contact .facebook img {
+	width: 55px;
+	height: 55px;
+	margin-right: 5px;
+}
+
+section#contact .udemy img {
+	width: 70px;
+	height: 40px;
+	margin-right: 0px;
+	margin-left: -5px;
+}
+
+section#contact p {
+	margin-top: 20px;
+	margin-right: 20px;
 }
   
 .navigation {
 	margin: 0;
 	padding: 0;
 	position: fixed;
-	right: 20px;
+	right: 10px;
 	list-style: none;
 	top: 50%;
 	transform: translateY(-50%);
@@ -216,7 +435,6 @@ section#contact {
 	border: 2px solid white;
 	border-radius: 50%;
 	margin-top: 10px;
-	margin-right: 10px;
 	transition: all 0.3s;
 }
 
