@@ -286,7 +286,7 @@ section#about .inner-card {
 }
 
 section#about .description {
-	height: 100%;
+	height: 90%;
 	font-size: 100%;
 	overflow-y: auto;
 }
