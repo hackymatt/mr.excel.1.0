@@ -49,10 +49,18 @@ async function setAbout() {
     let image = document.querySelector('.image');
     image.innerHTML = `<img src="${about.records[0].fields.photo[0].url}" alt="">`;
 
-    let description = document.querySelector('.description');
+    let description = document.querySelector('section#about .description');
     description.innerHTML = about.records[0].fields.description
 
 }    
+
+async function setOffer() {
+    let offer = await getData('https://api.airtable.com/v0/appp5bVt5FJXfh4Tk/offer')
+
+    let description = document.querySelector('section#offer .description');
+    description.innerHTML = offer.records[0].fields.description
+
+}
 
 async function setCourse() {
     let courses = await getData('https://api.airtable.com/v0/appp5bVt5FJXfh4Tk/courses')
@@ -102,8 +110,12 @@ async function setContact() {
     container.innerHTML = htmlContacts;
 } 
 
-setPage();
-setHome();
-setAbout();
-setCourse();
-setContact();
+(function setSite() {
+    setPage();
+    setHome();
+    setAbout();
+    setOffer();
+    setCourse();
+    setContact();
+})();
+
