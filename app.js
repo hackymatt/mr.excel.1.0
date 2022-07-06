@@ -41,3 +41,15 @@ $('.links a').on('click', function(e) {
         }, 800);
     };
 });
+
+$('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+$(window).on('load', function(){
+  setTimeout(removeLoader, 3000);
+});
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      $("nav").css("visibility", "visible");
+      $( "#loadingDiv" ).remove();
+  });  
+}
