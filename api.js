@@ -117,5 +117,6 @@ async function setContact() {
     setOffer();
     setCourse();
     setContact();
+    setPage();
 })();
 
