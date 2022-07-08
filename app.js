@@ -44,7 +44,7 @@ $('.links a').on('click', function(e) {
 
 $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
 $(window).on('load', function(){
-  setTimeout(removeLoader, 3000);
+  setTimeout(removeLoader, 5000);
 });
 
 function removeLoader(){

@@ -71,7 +71,7 @@ async function setCourse() {
         let htmlCourse = `<div class="inner-card">
                             <a href="${course.fields.link}" target="_blank">
                                 <p id="title">${course.fields.name}</p>
-                                <img src="${course.fields.photo[0].url}" alt="">
+                                <video src="${course.fields.video[0].url}" poster="${course.fields.photo[0].url}" controls></video>
                                 <p class="description">${course.fields.description}</p>
                                 <div class="details">
                                     <p class="duration"><span class="fa fa-clock-o"></i></span>${course.fields.duration}</p>
