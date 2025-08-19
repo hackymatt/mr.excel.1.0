@@ -3,7 +3,7 @@ async function getData(url) {
         let response = await fetch(url, {
             method: 'get',
             headers: new Headers({
-                'Authorization': 'Bearer keyo35imIX0P4o9gF'
+                'Authorization': 'Bearer <API_KEY>'
                 })
         })
         return await response.json();
@@ -119,4 +119,5 @@ async function setContact() {
     setContact();
     setPage();
 })();
+
 
